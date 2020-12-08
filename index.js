@@ -33,7 +33,7 @@ const resultsOnPage = (data) => {
             `beforeend`,
             `<hr/>
             <div>
-            <h3><a href="${url}" target="_blank" rel="noopener">${resultTitle}</a></h3>
+            <h3 ><a href="${url}" target="_blank" rel="noopener">${resultTitle}</a></h3>
             <p>${resultSnippet}</p>
             </div>
             <hr/>`
@@ -41,7 +41,7 @@ const resultsOnPage = (data) => {
     })    
 }
 
-const doSomething = async () => {
+const searchWiki = async () => {
     const inputValue = input.value.split(' ').join('_');
     try {
         let wikiResults = await fetchResults(inputValue);
@@ -51,23 +51,24 @@ const doSomething = async () => {
         alert("I regret to admit that I have failed you curious one! :(");    
     }
 }
+//searches after hitting the search button
 const sROC =  () => {
     if(checkUserInput() === 0) {
         clearDOM();
         return result.insertAdjacentHTML("beforeend", `<h3>That is invalid</h3>`);
     }else{
         clearDOM();
-        doSomething();
+        searchWiki();
     }
 }
-
+//searches after hitting the enter key
 const sRAKP = (e) => {
     if(checkUserInput() === 0 && e.which === 13 ) {
         clearDOM();
         return result.insertAdjacentHTML("beforeend", `<h3>That is invalid</h3>`);
     }else if(checkUserInput() > 0 && e.which === 13) {
         clearDOM();
-        doSomething();
+        searchWiki();
     }
 }
 
