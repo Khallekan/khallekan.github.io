@@ -2,7 +2,6 @@ const searchBar = document.getElementById('searchBar');
 const input = document.getElementById('input');
 const button = document.getElementById('button');
 const result = document.getElementById('result');
-
 const checkUserInput = () => {
     return input.value.length;
 }
@@ -32,9 +31,9 @@ const resultsOnPage = (data) => {
         return result.insertAdjacentHTML(
             `beforeend`,
             `<hr/>
-            <div class="font">
-            <h3 ><a href="${url}" target="_blank" rel="noopener">${resultTitle}</a></h3>
-            <p>${resultSnippet}</p>
+            <div class="result-style id="result-style">
+                <h3 ><a href="${url}" target="_blank" rel="noopener" class="link-style">${resultTitle}</a></h3>
+                <p class="snipppet-style"><a href="${url}">${resultSnippet}</a></p>
             </div>
             <hr/>`
         )
@@ -52,7 +51,7 @@ const searchWiki = async () => {
     }
 }
 
-const returnInvalid = () => result.insertAdjacentHTML("beforeend", `<h3 class="font">That is invalid</h3>`);
+const returnInvalid = () => result.insertAdjacentHTML("beforeend", `<h3>That is invalid</h3>`);
 
 //searches after hitting the search button
 const sROC =  () => {
