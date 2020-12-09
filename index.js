@@ -23,7 +23,7 @@ const fetchResults = async (inputValue) => {
 const resultsOnPage = (data) => {
     result.insertAdjacentHTML(
         "beforeend",
-        `<h2>Showing results for ${input.value}</h2>`
+        `<h2 class="font">Showing results for ${input.value}</h2>`
     )
     data.query.search.map(array => {
         const url = `https://en.wikipedia.org/?curid=${array.pageid}`;
@@ -32,7 +32,7 @@ const resultsOnPage = (data) => {
         return result.insertAdjacentHTML(
             `beforeend`,
             `<hr/>
-            <div>
+            <div class="font">
             <h3 ><a href="${url}" target="_blank" rel="noopener">${resultTitle}</a></h3>
             <p>${resultSnippet}</p>
             </div>
@@ -51,11 +51,14 @@ const searchWiki = async () => {
         alert("I regret to admit that I have failed you curious one! :(");    
     }
 }
+
+const returnInvalid = () => result.insertAdjacentHTML("beforeend", `<h3 class="font">That is invalid</h3>`);
+
 //searches after hitting the search button
 const sROC =  () => {
     if(checkUserInput() === 0) {
         clearDOM();
-        return result.insertAdjacentHTML("beforeend", `<h3>That is invalid</h3>`);
+        returnInvalid();
     }else{
         clearDOM();
         searchWiki();
@@ -65,7 +68,7 @@ const sROC =  () => {
 const sRAKP = (e) => {
     if(checkUserInput() === 0 && e.which === 13 ) {
         clearDOM();
-        return result.insertAdjacentHTML("beforeend", `<h3>That is invalid</h3>`);
+        returnInvalid();
     }else if(checkUserInput() > 0 && e.which === 13) {
         clearDOM();
         searchWiki();

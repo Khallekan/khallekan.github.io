@@ -1,59 +1,86 @@
 html,
 body {
-  margin: 0px;
-  padding: 0px;
+  width: 100%;
+  padding: 0%;
+  height: 100%;
 }
 body {
-  text-align: center;
-  background: linear-gradient(to right, #737373, #b1d8ee);
+  background: gray;
 }
-.header {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 60px 50px;
-  font-family: 'high tower text';
+
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 10vh;
 }
 
 .logo {
-  margin: 0;
-  padding: 0;
-  background-color: rgb(177, 216, 238);
+  height: 150px;
+  width: 150px;
+  padding-top: 10px;
+}
+
+.header {
+  font-family: 'Architects Daughter', cursive;
+  color: white;
+}
+
+.big-heading {
   text-transform: uppercase;
-  grid-column: span 1;
-  grid-row: 1/2;
+  margin-top: 10px;
+  font-weight: bolder;
 }
-.logo-info {
-  background-color: rgba(0, 0, 0, 0.1);
-  margin: 0;
-  padding: 0;
-  grid-column: span 1;
-  grid-row: 2/3;
-  color: whitesmoke;
+
+.small-heading {
+  margin-bottom: 15px;
 }
-.searchBar {
-  margin: 10px auto;
-  /* width: fit-content; */
-  padding: 20px auto;
-}
-.search {
-  width: 15em;
-  height: 40px;
-  padding: 20px;
-  text-align: center;
-  background-color: rgb(177, 216, 238);
+
+.searchArea {
+  background: linear-gradient(to right, #dedede, #354656);
   border-radius: 10px;
-  border: 1px solid rgb(177, 216, 238);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  height: 35px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+.searchArea {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  margin-bottom: 20px;
+}
+
+.search {
+  grid-column: 1 / 2;
+  text-align: center;
+  font-family: 'Architects Daughter', cursive;
+  border: none;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 .button {
-  width: 100px;
-  height: 35px;
-  margin-top: 5px;
-  border: 1px solid rgb(177, 216, 238);
-  border-radius: 20px;
+  grid-column: 2 / 3;
+  margin-left: auto;
+  font-family: 'Architects Daughter', cursive;
+  background-color: white;
+  border: 1px solid gray;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
-.button:hover {
-  background-color: rgba(177, 216, 238);
+
+button:hover {
+  background-color: gray;
+  color: white;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
-.sB {
-  border: 2px solid black;
+
+.font {
+  font-family: 'Architects Daughter', cursive;
 }
