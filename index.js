@@ -16,13 +16,14 @@ const fetchResults = async (inputValue) => {
         throw Error(resp.statusText);
     }
     const data = resp.json();
+    console.log(await data);
     return data;
 };
 
 const resultsOnPage = (data) => {
     result.insertAdjacentHTML(
         "beforeend",
-        `<h2 class="font">Showing results for ${input.value}</h2>`
+        `<h2 class="font">Showing ${data.query.search.length} results for ${input.value}</h2>`
     )
     data.query.search.map(array => {
         const url = `https://en.wikipedia.org/?curid=${array.pageid}`;
